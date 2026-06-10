@@ -262,15 +262,17 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 // 優先顯示官方 LINE QR 圖片（line-qr.png）；若圖片不存在則自動改用程式產生的 QR
 (function(){
   var img=document.getElementById('qr-img');
-  img.onerror=function(){
-    img.remove();
+  function fallback(){
+    if(!img) return;
+    img.remove(); img=null;
     new QRCode(document.getElementById('qrcode'),{
       text:'https://lin.ee/p4Zdfl3',
       width:140,height:140,
       colorDark:'#06C755',colorLight:'#ffffff',
       correctLevel:QRCode.CorrectLevel.M
     });
-  };
+  }
+  if(img.complete && img.naturalWidth===0){ fallback(); } else { img.onerror=fallback; }
 })();
 
 function updateDeadline(){
