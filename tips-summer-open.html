@@ -95,6 +95,14 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 .cta-deadline-countdown{font-size:13px;color:#FFD166;font-weight:700;margin-bottom:1.5rem;position:relative;z-index:1}
 .cta-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 .cta-note{font-size:11.5px;color:rgba(255,255,255,0.45);margin-top:1rem;position:relative;z-index:1}
+.faq{display:flex;flex-direction:column;gap:.6rem}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px}
+.faq-item summary{cursor:pointer;padding:.95rem 2.4rem .95rem 1.15rem;font-weight:700;font-size:14px;list-style:none;position:relative;line-height:1.5}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'＋';position:absolute;right:1.05rem;top:.85rem;color:#b9b3a4;font-weight:900}
+.faq-item[open] summary::after{content:'－'}
+.faq-a{padding:0 1.15rem 1.05rem;font-size:13px;color:var(--text2);line-height:1.75}
+.faq-line-btn{display:inline-flex;align-items:center;gap:6px;margin-top:.6rem;background:var(--line);color:#fff;font-size:12px;font-weight:700;padding:6px 14px;border-radius:18px;text-decoration:none}
 </style>
 </head>
 <body>
@@ -148,6 +156,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
     <div class="feat"><div class="ic">📝</div><div class="feat-val">作業督導</div><div class="feat-label">寫完才准回家</div></div>
     <div class="feat"><div class="ic">❄️</div><div class="feat-val">全天冷氣</div><div class="feat-label">舒適學習空間</div></div>
     <div class="feat"><div class="ic">✍️</div><div class="feat-val">作文培訓</div><div class="feat-label">會考滿級分目標</div></div>
+    <div class="feat"><div class="ic">🤖</div><div class="feat-val">個人語言模型</div><div class="feat-label">AI 為孩子量身建模</div></div>
   </div>
 </div>
 
@@ -210,6 +219,23 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
   <div class="meal-row">
     <div class="ic">🥡</div>
     <div><strong style="color:var(--text)">自備便當</strong><br>可自行攜帶，中午到班直接用餐。</div>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-label">家長最常問</p>
+  <p class="section-title">報名前，家長最常問的 10 個問題</p>
+  <div class="faq">
+    <details class="faq-item"><summary>Q1｜班外生中途加入，會跟不上原班進度嗎？</summary><div class="faq-a">不會。開課前先做免費 AI 弱點診斷，從孩子的實際程度切入，前兩週由輔導老師重點追蹤，銜接無痛。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 JH-Q1）</a></div></details>
+    <details class="faq-item"><summary>Q2｜免費 3 天晚間正課試讀怎麼預約？</summary><div class="faq-a">加官方 LINE 留下孩子年級＋方便的時段，櫃檯會為你保留試讀席次。試讀完不適合，一毛不收。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 JH-Q2）</a></div></details>
+    <details class="faq-item"><summary>Q3｜學校有暑輔，時間衝突怎麼辦？</summary><div class="faq-a">完全不衝突。學校暑輔週改為 12:30 到班無縫接軌，課表自動配合，費用也按暑輔週優惠計算。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 JH-Q3）</a></div></details>
+    <details class="faq-item"><summary>Q4｜升國三現在才開始衝刺，會太晚嗎？</summary><div class="faq-a">國三開學首週就是全國模擬考，這個暑假就是會考總複習的第一輪——現在開始，剛剛好。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 JH-Q4）</a></div></details>
+    <details class="faq-item"><summary>Q5｜AI 弱點診斷是怎麼運作的？</summary><div class="faq-a">系統分析孩子每一次的作答紀錄，自動找出真正失分的章節與觀念，老師再照診斷結果安排一對一補強，不做白工。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 JH-Q5）</a></div></details>
+    <details class="faq-item"><summary>Q6｜作業督導到幾點？寫不完怎麼辦？</summary><div class="faq-a">下午為督導時段，當日進度當日清，輔導老師一對一盯到搞懂為止，家長不用再當催寫作業的壞人。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 JH-Q6）</a></div></details>
+    <details class="faq-item"><summary>Q7｜中途請假，費用怎麼算？</summary><div class="faq-a">月結方案已預先扣除合理請假空間，恕不按天退費；預計請假多天，建議改選單週報名，按實際週數計費。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 JH-Q7）</a></div></details>
+    <details class="faq-item"><summary>Q8｜中午吃飯怎麼解決？</summary><div class="faq-a">可訂團膳 $100／餐吃到飽（需事先預約），或自備便當在班用餐，都有老師照看。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 JH-Q8）</a></div></details>
+    <details class="faq-item"><summary>Q9｜還有名額嗎？</summary><div class="faq-a">嚴格限額 20 席，名額隨報名浮動。加官方 LINE 即時查詢最新席次。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 JH-Q9）</a></div></details>
+    <details class="faq-item"><summary>Q10｜升國二和升國三會混在一起上嗎？</summary><div class="faq-a">不會。依年級分組授課，AI 訓練完全個人化，每個孩子都有自己的進度。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 JH-Q10）</a></div></details>
   </div>
 </div>
 

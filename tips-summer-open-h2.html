@@ -105,6 +105,14 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 .cta-deadline-countdown{font-size:13px;color:var(--gold);font-weight:700;margin-bottom:1.5rem;position:relative;z-index:1}
 .cta-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 .cta-note{font-size:11.5px;color:rgba(255,255,255,0.45);margin-top:1rem;position:relative;z-index:1}
+.faq{display:flex;flex-direction:column;gap:.6rem}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px}
+.faq-item summary{cursor:pointer;padding:.95rem 2.4rem .95rem 1.15rem;font-weight:700;font-size:14px;list-style:none;position:relative;line-height:1.5}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'＋';position:absolute;right:1.05rem;top:.85rem;color:#b9b3a4;font-weight:900}
+.faq-item[open] summary::after{content:'－'}
+.faq-a{padding:0 1.15rem 1.05rem;font-size:13px;color:var(--text2);line-height:1.75}
+.faq-line-btn{display:inline-flex;align-items:center;gap:6px;margin-top:.6rem;background:var(--line);color:#fff;font-size:12px;font-weight:700;padding:6px 14px;border-radius:18px;text-decoration:none}
 </style>
 </head>
 <body>
@@ -151,16 +159,10 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 
 <div class="section">
   <p class="section-label">新生限定 · 三重優惠</p>
-  <p class="section-title">第一次來 TIPS？我們讓你零風險試</p>
+  <p class="section-title">第一次來 TIPS？三重優惠一次到位</p>
   <div class="promo-grid">
-    <div class="promo-card">
-      <span class="promo-badge">優惠 ①</span>
-      <div class="promo-title">🎟️ 免費 3 堂晚間正課試上</div>
-      <div class="promo-desc">先來上 3 堂<strong>晚間英文正課</strong>，實際感受教學與系統訓練的威力，孩子適應、家長滿意再報名。<strong>不適合，一毛不收。</strong></div>
-      <div class="promo-foot">每位新生限一次，需提前預約席次。</div>
-    </div>
     <div class="promo-card star">
-      <span class="promo-badge">優惠 ② · 最划算</span>
+      <span class="promo-badge">優惠 ① · 最划算</span>
       <div class="promo-title">⏰ 早鳥全期價</div>
       <div class="promo-price">$19,800</div>
       <div class="promo-orig">原價 $23,500</div>
@@ -168,10 +170,16 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
       <div class="promo-foot">含講義教材、AI 系統費、全天冷氣空調費。</div>
     </div>
     <div class="promo-card">
-      <span class="promo-badge">優惠 ③</span>
+      <span class="promo-badge">優惠 ②</span>
       <div class="promo-title">💻 AI 智慧學習帳號</div>
-      <div class="promo-desc">報名全期即開通<strong>專屬個人帳號</strong>：7000 字彙進度追蹤、英檢模擬測驗、錯題自動回收，<strong style="color:#1D9E75">在班在家 24 小時都能用</strong>。</div>
+      <div class="promo-desc">報名全期即開通<strong>專屬個人帳號</strong>：7000 字彙進度追蹤、英檢模擬測驗、錯題自動回收，進步軌跡天天看得見。</div>
       <div class="promo-foot">帳號隨課程開通，視覺化看見每天的字彙成長。</div>
+    </div>
+    <div class="promo-card">
+      <span class="promo-badge">優惠 ③ · 神秘加碼</span>
+      <div class="promo-title">🎁 報名贈 $9,800 好禮</div>
+      <div class="promo-desc">6/30 前報名全期，加贈<strong>價值 $9,800 的好禮</strong>。內容暫不公開——<a href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener" style="color:var(--line);font-weight:900;text-decoration:none">趕快加官方 LINE 回覆「好禮」</a>，馬上告訴你。</div>
+      <div class="promo-foot">數量有限，送完為止。</div>
     </div>
   </div>
 </div>
@@ -185,6 +193,8 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
     <div class="feat"><div class="ic">🔤</div><div class="feat-val">英檢系統訓練</div><div class="feat-label">中級通過率 90%</div></div>
     <div class="feat"><div class="ic">📐</div><div class="feat-val">數A/B 分流先修</div><div class="feat-label">高二進度搶先學</div></div>
     <div class="feat"><div class="ic">❄️</div><div class="feat-val">全天冷氣</div><div class="feat-label">舒適學習空間</div></div>
+    <div class="feat"><div class="ic">✍️</div><div class="feat-val">學測英文作文</div><div class="feat-label">滿級分不是夢</div></div>
+    <div class="feat"><div class="ic">🤖</div><div class="feat-val">個人語言模型</div><div class="feat-label">AI 為孩子量身建模</div></div>
   </div>
 </div>
 
@@ -194,7 +204,8 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
   <div class="schedule-wrap">
     <div class="sched-card">
       <div class="sched-time">09:00 – 17:00</div>
-      <div class="sched-sub">日間自主衝刺班</div>
+      <div class="sched-sub">日間開放學習基地 · 彈性到班</div>
+      <div class="sched-item"><div class="dot"></div><div><strong>不強迫整天到班</strong>——時間自己安排，座位、AI 系統與輔導老師全天開放，想衝就來</div></div>
       <div class="sched-item"><div class="dot"></div><div>數A／數B 分流先修：依選組進度超前</div></div>
       <div class="sched-item"><div class="dot"></div><div>AI 字彙引擎：學測 7000 字每日訓練</div></div>
       <div class="sched-item"><div class="dot"></div><div>高一弱點章節補洞：數學、物理、化學</div></div>
@@ -203,6 +214,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
     <div class="sched-card">
       <div class="sched-time">18:00 – 20:30</div>
       <div class="sched-sub">晚間英文正課</div>
+      <div class="sched-item"><div class="dot"></div><div><strong>每週三：語言學教授線上直播課</strong></div></div>
       <div class="sched-item"><div class="dot"></div><div>高階文法統整：學測句構與翻譯訓練</div></div>
       <div class="sched-item"><div class="dot"></div><div>中級英檢收割＋中高級挑戰訓練</div></div>
       <div class="sched-item"><div class="dot"></div><div>學測閱讀題組：速讀與篇章策略</div></div>
@@ -219,7 +231,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
     <div class="price-row"><span>8 月特訓 <span class="sub">8/3–8/28 · 日間＋晚間正課</span></span><span class="p">$11,000</span></div>
     <div class="price-row"><span>單週報名 <span class="sub">按週靈活結算</span></span><span class="p">$2,750</span></div>
     <div class="price-row"><span>7＋8 月全期 <span class="sub">新生早鳥 · 6/30 前</span></span><span class="p price-hot">$19,800 <span class="price-strike">$23,500</span></span></div>
-    <div class="price-foot">全期方案含 <b>AI 智慧學習帳號</b>＋免費 3 堂晚間正課試上。月結含講義教材、AI 系統費、全天冷氣空調費。</div>
+    <div class="price-foot">全期方案含 <b>AI 智慧學習帳號</b>。月結含講義教材、AI 系統費、全天冷氣空調費。</div>
   </div>
   <div class="warn-box"><strong>⚠️ 注意：</strong>月結方案已預先扣除請假空間，中途恕不接受按天扣款或退費。預計請假多天者建議選擇<strong>單週報名</strong>。新生優惠限首次報名學生，恕不與其他優惠併用。</div>
 </div>
@@ -234,6 +246,23 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
   <div class="meal-row">
     <div class="ic">🥡</div>
     <div><strong style="color:var(--text)">自備便當</strong><br>可自行攜帶，中午到班直接用餐。</div>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-label">家長最常問</p>
+  <p class="section-title">報名前，家長最常問的 10 個問題</p>
+  <div class="faq">
+    <details class="faq-item"><summary>Q1｜高中生時間自由，白天一定要到班嗎？</summary><div class="faq-a">不強迫。日間是開放學習基地：座位、AI 系統、輔導老師全天開放，想衝就來、有事自由安排。我們在意的是訓練完成度，不是坐好坐滿。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 H2-Q1）</a></div></details>
+    <details class="faq-item"><summary>Q2｜晚間正課上什麼？週三直播課是什麼？</summary><div class="faq-a">18:00–20:30 為英文正課（文法、英檢與學測訓練），每週三由語言學教授線上直播授課，用大學等級的方法學英文。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 H2-Q2）</a></div></details>
+    <details class="faq-item"><summary>Q3｜中級英檢通過率 90% 是怎麼做到的？</summary><div class="faq-a">AI 字彙引擎每天依孩子程度出題、錯字自動回收再測，搭配正課與每週檢測。想看系統實際畫面，加 LINE 預約展示。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 H2-Q3）</a></div></details>
+    <details class="faq-item"><summary>Q4｜孩子英文基礎不好，跟得上嗎？</summary><div class="faq-a">系統會先做字彙量檢測，從孩子的真實程度開始建課程，每個人的訓練內容都不一樣。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 H2-Q4）</a></div></details>
+    <details class="faq-item"><summary>Q5｜$9,800 好禮是什麼？</summary><div class="faq-a">6/30 前報名全期限定的神秘加碼，數量有限。加官方 LINE 回覆「好禮」，馬上告訴你內容。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 H2-Q5）</a></div></details>
+    <details class="faq-item"><summary>Q6｜報名後什麼時候可以開始用 AI 系統？</summary><div class="faq-a">報名完成即開通專屬帳號，7/1 開課前就能先開始字彙訓練，提早進入狀態。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 H2-Q6）</a></div></details>
+    <details class="faq-item"><summary>Q7｜白天可以只來自習、使用系統嗎？</summary><div class="faq-a">可以。全期學員日間可自由使用座位、AI 系統與輔導資源，把這裡當成自己的讀書基地。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 H2-Q7）</a></div></details>
+    <details class="faq-item"><summary>Q8｜數學、自然科有人教嗎？</summary><div class="faq-a">有。日間依孩子的選組與弱點安排先修／補強進度，輔導老師一對一除錯。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 H2-Q8）</a></div></details>
+    <details class="faq-item"><summary>Q9｜費用怎麼算？可以只報單週嗎？</summary><div class="faq-a">7 月 $12,500、8 月 $11,000、單週 $2,750；6/30 前報全期早鳥價 $19,800（原價 $23,500）。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 H2-Q9）</a></div></details>
+    <details class="faq-item"><summary>Q10｜學測英文作文怎麼練？</summary><div class="faq-a">系統批改＋老師人工雙重批閱，從句構、用字到論點逐段修到位，目標滿級分。<br><a class="faq-line-btn" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 加 LINE 問這題（回覆 H2-Q10）</a></div></details>
   </div>
 </div>
 
@@ -256,11 +285,11 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 
 <div class="cta-block">
   <div class="deadline-flag"><span class="dl-pulse"></span>新生優惠 · 6/30 截止</div>
-  <div class="cta-title">晚間正課免費試上 3 堂，先體驗再決定</div>
+  <div class="cta-title">加官方 LINE 諮詢，為孩子預留席次</div>
   <div class="cta-sub">小班嚴限席次 · 新生名額有限 · 額滿即止</div>
   <div class="cta-deadline-countdown" id="dl-countdown">距優惠截止還有 -- 天</div>
   <div class="cta-row">
-    <a class="btn-line" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 LINE 預約免費試上</a>
+    <a class="btn-line" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 LINE 免費諮詢</a>
     <a class="btn-ghost" href="tel:0905547839">📞 直接來電 0905-547-839</a>
   </div>
   <p class="cta-note">諮詢不代表報名，零壓力。我們會先了解孩子狀況，再建議最適合的方案。</p>
