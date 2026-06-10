@@ -31,6 +31,12 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 .btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(212,175,55,0.5);color:#fff;font-size:15px;font-weight:700;padding:.85rem 1.75rem;border-radius:30px;text-decoration:none;transition:background .18s}
 .btn-ghost:hover{background:rgba(212,175,55,0.15)}
 .hero-note{font-size:11px;color:rgba(255,255,255,0.35);margin-top:1rem}
+.countdown-ring{display:inline-flex;gap:1.25rem;background:rgba(0,0,0,0.35);border:1px solid rgba(212,175,55,0.35);border-radius:12px;padding:1.1rem 1.5rem;margin-bottom:.6rem;position:relative;z-index:1}
+.cd-item{text-align:center;min-width:48px}
+.cd-num{font-family:'Noto Serif TC',serif;font-size:30px;font-weight:900;color:var(--gold);line-height:1;display:block}
+.cd-label{font-size:10px;color:rgba(255,255,255,0.45);letter-spacing:.1em;margin-top:4px;display:block}
+.cd-sep{font-size:26px;font-weight:900;color:rgba(255,255,255,0.25);align-self:flex-start;padding-top:4px}
+.cd-note{font-size:11px;color:rgba(255,255,255,0.45);margin-bottom:1.25rem;position:relative;z-index:1}
 .section{padding:1.85rem 0}
 .section-label{font-size:11px;letter-spacing:.25em;color:var(--acc);font-weight:700;margin-bottom:.5rem}
 .section-title{font-family:'Noto Serif TC',serif;font-size:23px;font-weight:900;margin-bottom:1.25rem}
@@ -121,8 +127,19 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 <div class="hero">
   <p class="hero-eyebrow">2027 學測決勝暑期特訓 · 台中南屯 · 新生招募中</p>
   <h1 class="hero-title"><span class="gold">學測倒數，</span><br><em>這是最後一個暑假</em></h1>
-  <p class="hero-sub">升高三的暑假＝學測總複習的黃金第一輪。<br>開學後段考、模考、複習三線夾殺，<br>現在不開始，之後只能硬擠。<span style="display:block;margin-top:.5rem;font-size:12px;color:rgba(255,255,255,0.45)">距 2027 年 1 月學測僅剩約 7 個月（日期以大考中心公告為準）</span></p>
-  <div style="margin-bottom:1rem"><span class="urgent-pill">🔥 新生限定優惠 · 6/30 截止</span></div>
+  <p class="hero-sub">升高三的暑假＝學測總複習的黃金第一輪。<br>開學後段考、模考、複習三線夾殺，<br>現在不開始，之後只能硬擠。</p>
+  <div style="margin-bottom:1rem"><span class="urgent-pill">⚠️ 學測倒數 · 機會只有一次</span></div>
+  <div class="countdown-ring" id="cd-ring">
+    <div class="cd-item"><span class="cd-num" id="cd-d">--</span><span class="cd-label">天</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-item"><span class="cd-num" id="cd-h">--</span><span class="cd-label">時</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-item"><span class="cd-num" id="cd-m">--</span><span class="cd-label">分</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-item"><span class="cd-num" id="cd-s">--</span><span class="cd-label">秒</span></div>
+  </div>
+  <p class="cd-note">距 2027 年學測（1/22 – 1/24）</p>
+  <div style="margin-bottom:1rem"><span class="urgent-pill" style="background:rgba(212,175,55,0.2);animation:none">🔥 新生限定優惠 · 6/30 截止</span></div>
   <div class="hero-cta-row">
     <a class="btn-line" href="https://lin.ee/p4Zdfl3" target="_blank" rel="noopener">💬 LINE 免費諮詢</a>
     <a class="btn-ghost" href="tel:0905547839">📞 0905-547-839</a>
@@ -193,7 +210,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
     <div class="feat"><div class="ic">🔤</div><div class="feat-val">英檢系統訓練</div><div class="feat-label">中級通過率 90%</div></div>
     <div class="feat"><div class="ic">📐</div><div class="feat-val">學測總複習</div><div class="feat-label">第一輪暑假完成</div></div>
     <div class="feat"><div class="ic">❄️</div><div class="feat-val">全天冷氣</div><div class="feat-label">舒適學習空間</div></div>
-    <div class="feat"><div class="ic">✍️</div><div class="feat-val">學測英文作文</div><div class="feat-label">滿級分不是夢</div></div>
+    <div class="feat"><div class="ic">✍️</div><div class="feat-val">學測英文作文</div><div class="feat-label">保證 12 級分</div></div>
     <div class="feat"><div class="ic">🤖</div><div class="feat-val">個人語言模型</div><div class="feat-label">AI 為孩子量身建模</div></div>
   </div>
 </div>
@@ -312,6 +329,18 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
     });
   };
 })();
+
+function updateCountdown(){
+  var target=new Date('2027-01-22T08:00:00+08:00');
+  var diff=target-new Date();
+  if(diff<=0){document.getElementById('cd-ring').innerHTML='<span style="color:rgba(255,255,255,0.6);font-size:14px">學測進行中，祝考生順利</span>';return;}
+  var d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000),sec=Math.floor((diff%60000)/1000);
+  document.getElementById('cd-d').textContent=String(d).padStart(2,'0');
+  document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(sec).padStart(2,'0');
+}
+updateCountdown();setInterval(updateCountdown,1000);
 
 function updateDeadline(){
   var dl=new Date('2026-07-01T00:00:00+08:00');
